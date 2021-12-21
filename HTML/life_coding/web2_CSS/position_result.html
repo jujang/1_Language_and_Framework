@@ -1,0 +1,59 @@
+<!-- 실험 결과 -->
+<html><head>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        div {
+            border: 5px solid black;
+            padding: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div>Hello</div>
+    <div style="
+    position: relative;
+">Hello
+        <div style="
+    position: relative;
+    top: 10px;
+">Hello
+            <div>Hello</div>
+            <div style="position: static;left: 20px;">static</div>
+            <div style="
+                border: 5px solid red;
+                background-color:rgba(255,0,0,0.5);
+                position: relative;
+                left: 20px;
+                top: 20px;
+            ">relative</div>
+            <div style="
+                border: 5px solid green;
+                background-color:rgba(0,255,0,0.5);
+                text-align:center;
+                position: absolute;
+                left: 0;
+                top: 0;
+            ">absolute</div>
+            <div style="
+                border-color: blue;
+                background-color:rgba(0,0,255,0.5);
+                text-align:right;
+                position: fixed;
+                top: 0;
+                left: 0;
+            ">fixed</div>
+            <div>Hello</div>
+        </div>
+    </div>
+    
+    <div style="
+    height: 1103px;
+">Hello</div>
+
+
+</body></html>
