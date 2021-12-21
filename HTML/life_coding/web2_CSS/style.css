@@ -1,0 +1,41 @@
+body {
+  margin: 0;
+}
+a {
+  color: black;
+  text-decoration: underline;
+}
+#had h1 {
+  font-size: 45px;
+  text-align: center;
+  border-bottom: 1px solid gray;
+  margin: 0;
+  padding: 20px;
+}
+#grid {
+  display: grid;
+  grid-template-columns: 121px 1fr;
+}
+#grid ol {
+  border-right: 1px solid gray;
+  width: 90px;
+  margin: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 30px;
+}
+#article {
+  padding-left: 20px;
+}
+#sub_title h2 {
+  margin-top: 10px;
+}
+@media (max-width: 800px) {
+  #grid {
+    display: block;
+  }
+  #grid ol {
+    width: 100%;
+    border-bottom: 1px solid gray;
+  }
+}
