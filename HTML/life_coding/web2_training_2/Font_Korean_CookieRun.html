@@ -4,6 +4,7 @@
         <title>GGojang's Blog</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="style.css">
+        <link rel="icon" href="pic/favicon.ico">
         <style>
             #content_head h2{
                 margin-top:0px;
@@ -11,15 +12,15 @@
                 margin-right:0px;
                 margin-bottom:0px;
             }
-            #content {
-                display:grid;
-                grid-template-rows: 60px 1fr;
-            }
             #content_font{
-                display:grid;
-                grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
                 font-size:25px;
-                padding-bottom:25px;
+                padding-bottom:20px;
+            }
+            #font_1, #font_2, #font_3, #font_4, #font_5 {
+                display:inline-block;
+                padding-left:10px;
+                padding-right:10px;
+                text-align:center;
             }
             #font_1 a{
                 text-decoration-line: none;
@@ -60,6 +61,7 @@
                     <ul>
                         <li><a href="Layout_FLoat.html">Float</a></li>
                         <li><a href="Layout_Multi_Column.html">Multi Column</a></li>
+                        <li><a href="Layout_Mediaquery.html">Mediaquery</a></li>
                     </ul>
                     <li>Font</li>
                     <ul>
@@ -74,7 +76,6 @@
                         <li><a href="Graphic_Blend(Background).html">Blend(Background)</a></li>
                         <li><a href="Graphic_Blend(Mix).html">Blend(Mix)</a></li>
                         <li><a href="Graphic_Transform.html">Transform</a></li>
-                        <li><a href="Graphic_Special.html">Special</a></li>
                     </ul>
                 </ol>      
             </div>
@@ -121,13 +122,16 @@
         </div>
         <footer>
             <div id=footer_icon>
-                <img src="pic/lottery.png" width="70px">
             </div>
             <div id=footer_main>
                 사이트명: GGojang's Blog<br>
                 웹페이지 주소: GGojang.site<br>
                 이메일: jeongookjang@naver.com<br>
                 연락처: 010-5114-2039<br>
+            </div>
+            <div id="image_license">
+                <div>Cursor icon made by <strong>punaakawan</strong> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+                Thanks <strong>Mr.Kim</strong> for providing images!
             </div>
         </footer>
     </body>

@@ -1,6 +1,11 @@
+body,
+a {
+  cursor: url("pic/cursor_resize.cur"), auto;
+}
 body {
   display: grid;
-  grid-template-rows: 111px 1fr 150px;
+  /* grid-template-rows: 111px 1fr 150px; */
+  grid-template-rows: max-content 1fr max-content;
   margin: 0;
 }
 a {
@@ -11,10 +16,10 @@ header {
   font-size: 45px;
   text-align: center;
   padding-top: 15px;
-  padding-bottom: 20px;
+  padding-bottom: 0px;
   /* background-color: rgba(0, 191, 255, 0.85); */
   background-color: darkred;
-  background-image: url(pic/spider-logo.png);
+  background-image: url("pic/spider-logo.png");
   background-size: 110px;
 }
 header a {
@@ -32,11 +37,11 @@ header #info {
   font-family: "Courier New";
   padding-top: 10px;
   border-bottom: none;
+  margin-bottom: 3px;
 }
 footer {
   display: grid;
-  grid-template-columns: 1fr 4fr;
-  font-family: "NanumGothic";
+  grid-template-columns: 1fr 3fr 2fr;
   font-size: 15px;
   font-weight: 500;
   color: rgba(248, 249, 250, 0.3);
@@ -44,44 +49,65 @@ footer {
   background-color: #222426;
   padding-top: 20px;
   padding-left: 80px;
+  padding-right: 40px;
+  padding-bottom: 50px;
 }
 footer #footer_icon {
-  padding-right: 40px;
-  text-align: right;
+  margin-right: 15px;
+  height: 80px;
+  background-image: url("pic/lottery.png");
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 80px;
 }
+footer #footer_icon:hover {
+  background-image: url("pic/Mr_Kim_2.jpg");
+}
+/* footer #image_license {
+  padding-top: 15px; 
+  text-align: right;
+  color: rgba(248, 249, 250, 0.2);
+}
+footer #image_license a {
+  color: rgba(248, 249, 250, 0.2);
+} */
 #middle {
   display: grid;
-  grid-template-columns: 220px 1fr 175px;
+  grid-template-columns: max-content 1fr 175px;
 }
 #nav {
   font-family: "CookieRun Regular";
-  font-size: 23px;
+  font-size: 22px;
   /* color: deepskyblue; */
   color: rgb(169, 0, 0);
   text-shadow: 0.8px 0.8px 1px snow;
   /* background-color: #222426; */
   border-right: 1px dotted darkred;
+  margin-left: 30px;
+  padding-right: 10px;
 }
 #nav a {
   /* color: rgba(0, 191, 255, 0.9); */
   color: rgb(169, 0, 0);
 }
 #nav ol {
-  padding-left: 35px;
+  padding-left: 15px;
 }
 #nav ol ul {
-  padding-left: 10px;
+  padding-left: 8px;
   font-size: 18px;
 }
 #main {
   display: grid;
-  grid-template-rows: 90px 1fr;
+  grid-template-rows: max-content max-content;
   padding-left: 10px;
   padding-right: 10px;
   padding-bottom: 25px;
 }
 #info {
   border-bottom: 1.5px dashed darkred;
+  padding-bottom: 7px;
+  margin-bottom: 5px;
 }
 h2 {
   margin-top: 10px;
@@ -104,6 +130,27 @@ h2 {
   border-left: 1px dotted darkred;
   text-align: center;
   /* background-color: snow; */
+}
+@media (max-width: 830px) {
+  #middle {
+    grid-template-columns: none;
+    grid-template-rows: max-content max-content max-content;
+  }
+  #nav {
+    border-right: none;
+  }
+  #main {
+    border-top: 2px solid darkred;
+  }
+  #aside {
+    padding-top: 10px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-left: none;
+    border-top: 2px solid darkred;
+    text-align: center;
+  }
 }
 
 @font-face {
