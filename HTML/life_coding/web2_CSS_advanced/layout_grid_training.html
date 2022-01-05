@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> 
+            grid_training
+        </title>
+        <style> 
+            body{
+                display:grid;
+                grid-template-rows: 76px 1fr 80px;
+                margin:0;
+            }
+            #header{
+                font-family:'CookieRun Regular';
+                font-size:30px;
+                text-align: center;
+                border-bottom:1px solid gray;
+                padding-top:15px;
+                padding-bottom:20px;
+                background-color:ghostwhite;
+            }
+            #middle{
+                display:grid;
+                grid-template-columns: 100px 1fr 170px;
+            }
+            #nav {
+                text-decoration:underline;
+                border-right:1px solid gray;
+                background-color:lemonchiffon;
+            }
+            #aside {
+                padding-top:10px;
+                padding-bottom:10px;
+                padding-left:6px;
+                padding-right:6px;
+                border-left:1px solid gray;
+                text-align:center;
+                background-color:snow;
+            }
+            #footer {
+                color: dimgrey;
+                font-size:13px;
+                text-align:center;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                border-top:1px solid gray;
+                background-color:gainsboro;
+            }
+            @font-face {
+                font-family: "CookieRun Regular";
+                src: url("text_font/Korean/CookieRun Regular.woff2") format("woff2"),
+                url("text_font/Korean/CookieRun Regular.woff") format("woff"),
+                url("text_font/Korean/CookieRun Regular.eot") format("embedded-opentype");
+            }
+        </style>
+    </head>
+    <body>
+        <div id=header> GGojang's Blog </div>
+        <div id=middle>
+            <div id=nav>
+                <ol>
+                    <li>빨강</li>
+                    <li>주황</li>
+                    <li>노랑</li>
+                    <li>초록</li>
+                    <li>파랑</li>
+                    <li>보라</li>
+                </ol>
+            </div>
+            <div id=main>
+                여기는 가운데 부분으로 주된 콘텐츠들이 들어갑니다~
+            </div>
+            <div id=aside>
+                <img src="pic/pic_0.jpg" width=150px;>
+                <img src="pic/pic_1.jpg" width=150px;>
+                <img src="pic/pic_2.jpg" width=150px;>
+                <img src="pic/pic_3.jpg" width=150px;>
+                <img src="pic/pic_4.jpg" width=150px;>
+            </div>
+        </div>
+        <div id=footer>
+            Webpage name: GGojang's Blog <br>
+            E-mail: jeongookjang@naver.com <br>
+            phone number: 010-5114-2039 <br>
+        </div>
+    </body>
+</html>

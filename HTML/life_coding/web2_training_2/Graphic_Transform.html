@@ -1,0 +1,314 @@
+<!doctype html>
+<html>
+    <head>
+        <title>GGojang's Blog</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+        <style>
+            #content {
+                text-align:center;
+            }
+            #content h2 {
+                font-family:"FredokaOne";
+                font-size:20px;
+                margin-top:8px;
+                padding-top:5px;
+                padding-bottom:5px;
+            }
+            #content h1{
+                font-family:"Ubuntu";
+                font-size:35px;
+                font-weight:700;
+                margin-top:0px;
+                margin-bottom:20px;
+            }
+            #card{
+                display:inline-block;
+                width:200px;
+                height:200px;
+                background-color:gainsboro;
+                box-shadow: 0 3px 5px gray;
+                margin:14px 14px 15px 14px;
+                padding:10px 5px 5px 5px;
+            }
+            .background_img {
+                width:140px;
+                height:140px;
+                margin:10px 32px 0 32px;
+                background-image:url(pic/spider-logo_gray.png);
+                opacity:0.85;
+                background-repeat:no-repeat;
+                background-position: center;
+                background-size:cover;
+            }
+            .transform_img {
+                width:140px;
+                height:140px;
+                background-image:url(pic/spider-logo.png);
+                opacity:1.4;
+                background-repeat:no-repeat;
+                background-position: center;
+                background-size:cover;
+                transition:all 1s;
+            }
+            .rotateX_45 .transform_img:hover {
+                transform: rotateX(45deg);
+            }
+            .rotateX_90 .transform_img:hover {
+                transform: rotateX(90deg);
+            }
+            .rotateX_180 .transform_img:hover {
+                transform: rotateX(180deg);
+            }
+            .rotateX_360 .transform_img:hover {
+                transform: rotateX(360deg);
+                transition:all 2s;
+            }
+            .rotateY_45 .transform_img:hover {
+                transform: rotateY(45deg);
+            }
+            .rotateY_90 .transform_img:hover {
+                transform: rotateY(90deg);
+            }
+            .rotateY_180 .transform_img:hover {
+                transform: rotateY(180deg);
+            }
+            .rotateY_360 .transform_img:hover {
+                transform: rotateY(360deg);
+                transition:all 2s;
+            }
+            .rotate_45 .transform_img:hover {
+                transform: rotate(45deg);
+            }
+            .rotate_90 .transform_img:hover {
+                transform: rotate(90deg);
+            }
+            .rotate_180 .transform_img:hover {
+                transform: rotate(180deg);
+            }
+            .rotate_360 .transform_img:hover {
+                transform: rotate(360deg);
+                transition:all 2s;
+            }
+            .scaleX .transform_img:hover {
+                transform: scaleX(2);
+            }
+            .scaleY .transform_img:hover {
+                transform: scaleY(2);
+            }
+            .scale .transform_img:hover {
+                transform: scale(2);
+            }
+            .skewX_45 .transform_img:hover {
+                transform: skewX(45deg);
+            }
+            .skewY_45 .transform_img:hover {
+                transform: skewY(45deg);
+            }
+            .skew_45 .transform_img:hover {
+                transform: skew(45deg, 45deg);
+            }
+            .translateX .transform_img:hover {
+                transform: translateX(60px);
+            }
+            .translateY .transform_img:hover {
+                transform: translateY(60px);
+            }
+            .translate .transform_img:hover {
+                transform: translate(60px, 60px);
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <a href="index.html">GGojang's Blog</a>
+            <div id="info">위 글자를 클릭하면 첫 페이지로 돌아갑니다</div>
+        </header>
+        <div id="middle">
+            <div id="nav">
+                <ol>
+                    <li>Layout</li>
+                    <ul>
+                        <li><a href="Layout_FLoat.html">Float</a></li>
+                        <li><a href="Layout_Multi_Column.html">Multi Column</a></li>
+                    </ul>
+                    <li>Font</li>
+                    <ul>
+                        <li><a href="Font_Korean.html">Korean</a></li>
+                        <li><a href="Font_English.html">English</a></li>
+                    </ul>
+                    <li>Graphic</li>
+                    <ul>
+                        <li><a href="Graphic_Background(Scroll).html">Background(Scroll)</a></li>
+                        <li><a href="Graphic_Background(Fixed).html">Background(Fixed)</a></li>
+                        <li><a href="Graphic_Filter.html">Filter</a></li>
+                        <li><a href="Graphic_Blend(Background).html">Blend(Background)</a></li>
+                        <li><a href="Graphic_Blend(Mix).html">Blend(Mix)</a></li>
+                        <li><a href="Graphic_Transform.html">Transform</a></li>
+                        <li><a href="Graphic_Special.html">Special</a></li>
+                    </ul>
+                </ol>   
+            </div>
+            <div id="main">
+                <div id="info">
+                    <h2>Graphic - Transform</h2>
+                    <div id="info_text">
+                        해당 페이지는 이미지에 Transform기능을 적용한 페이지입니다. <br>
+                        하단의 이미지에 커서를 올리거나 모바일 환경에서는 눌렀을 시 해당 개체에 설명된 Tranform 속성이 적용됩니다. <br>
+                    </div>
+                </div>  
+                <div id="content">
+                    <div id="card">
+                        <div class="background_img rotateX_45">
+                            <div class="transform_img"></div>
+                        </div>
+                        <h2>rotateX 45deg</h2>
+                    </div>
+                    <div id="card">
+                        <div class="background_img rotateX_90">
+                            <div class="transform_img"></div>
+                        </div>
+                        <h2>rotateX 90deg</h2>
+                    </div>
+                    <div id="card">
+                        <div class="background_img rotateX_180">
+                            <div class="transform_img"></div>
+                        </div>
+                        <h2>rotateX 180deg</h2>
+                    </div>
+                    <div id="card">
+                        <div class="background_img rotateX_360">
+                            <div class="transform_img"></div>
+                        </div>
+                        <h2>rotateX 360deg</h2>
+                    </div>
+                    <div id="card">
+                        <div class="background_img rotateY_45">
+                            <div class="transform_img"></div>
+                        </div>
+                        <h2>rotateY 45deg</h2>
+                    </div>
+                    <div id="card">
+                        <div class="background_img rotateY_90">
+                            <div class="transform_img"></div>
+                        </div>
+                        <h2>rotateY 90deg</h2>
+                    </div>
+                    <div id="card">
+                        <div class="background_img rotateY_180">
+                            <div class="transform_img"></div>
+                        </div>
+                        <h2>rotateY 180deg</h2>
+                    </div>
+                    <div id="card">
+                        <div class="background_img rotateY_360">
+                            <div class="transform_img"></div>
+                        </div>
+                        <h2>rotateY 360deg</h2>
+                    </div>
+                    <div id="card">
+                        <div class="background_img rotate_45">
+                            <div class="transform_img"></div>
+                        </div>
+                        <h2>rotate 45deg</h2>
+                    </div>
+                    <div id="card">
+                        <div class="background_img rotate_90">
+                            <div class="transform_img"></div>
+                        </div>
+                        <h2>rotate 90deg</h2>
+                    </div>
+                    <div id="card">
+                        <div class="background_img rotate_180">
+                            <div class="transform_img"></div>
+                        </div>
+                        <h2>rotate 180deg</h2>
+                    </div>
+                    <div id="card">
+                        <div class="background_img rotate_360">
+                            <div class="transform_img"></div>
+                        </div>
+                        <h2>rotate 360deg</h2>
+                    </div>
+                    <h1>rotate</h1>
+                    <div id="card">
+                        <div class="background_img scaleX">
+                            <div class="transform_img"></div>
+                        </div>
+                        <h2>scaleX 2</h2>
+                    </div>
+                    <div id="card">
+                        <div class="background_img scaleY">
+                            <div class="transform_img"></div>
+                        </div>
+                        <h2>scaleY 2</h2>
+                    </div>
+                    <div id="card">
+                        <div class="background_img scale">
+                            <div class="transform_img"></div>
+                        </div>
+                        <h2>scale 2,2</h2>
+                    </div>
+                    <h1>scale</h1>
+                    <div id="card">
+                        <div class="background_img skewX_45">
+                            <div class="transform_img"></div>
+                        </div>
+                        <h2>skewX 45deg</h2>
+                    </div>
+                    <div id="card">
+                        <div class="background_img skewY_45">
+                            <div class="transform_img"></div>
+                        </div>
+                        <h2>skewY 45deg</h2>
+                    </div>
+                    <div id="card">
+                        <div class="background_img skew_45">
+                            <div class="transform_img"></div>
+                        </div>
+                        <h2>skew 45deg</h2>
+                    </div>
+                    <h1>skew</h1>
+                    <div id="card">
+                        <div class="background_img translateX">
+                            <div class="transform_img"></div>
+                        </div>
+                        <h2>translateX 60px</h2>
+                    </div>
+                    <div id="card">
+                        <div class="background_img translateY">
+                            <div class="transform_img"></div>
+                        </div>
+                        <h2>translateY 60px</h2>
+                    </div>
+                    <div id="card">
+                        <div class="background_img translate">
+                            <div class="transform_img"></div>
+                        </div>
+                        <h2>translate 60px,60px</h2>
+                    </div>
+                    <h1>translate</h1>
+                </div>
+            </div>
+            <div id="aside">
+                <img src="pic/pic_0.jpg" width=150px;>
+                <img src="pic/pic_1.jpg" width=150px;>
+                <img src="pic/pic_2.jpg" width=150px;>
+                <img src="pic/pic_3.jpg" width=150px;>
+                <img src="pic/pic_4.jpg" width=150px;>
+                [광고~]
+            </div>
+        </div>
+        <footer>
+            <div id=footer_icon>
+                <img src="pic/lottery.png" width="70px">
+            </div>
+            <div id=footer_main>
+                사이트명: GGojang's Blog<br>
+                웹페이지 주소: GGojang.site<br>
+                이메일: jeongookjang@naver.com<br>
+                연락처: 010-5114-2039<br>
+            </div>
+        </footer>
+    </body>
+</html>

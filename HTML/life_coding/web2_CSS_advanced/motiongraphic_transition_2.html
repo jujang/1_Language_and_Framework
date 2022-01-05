@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{
+                background-color:black;
+                transition: all 2s;
+            }
+            div{
+                background-color: black;
+                color:white;
+                padding:10px;
+                width:100px;
+                height:50px;
+                transition:all 0.5s;
+                transition-timing-function:cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            }
+            div:hover {
+                height:400px;
+            }
+        </style>
+    </head>
+    <body onload="document.querySelector('body').style.backgroundColor='white';">
+        <div>
+            Transition
+        </div>
+    </body>
+</html>

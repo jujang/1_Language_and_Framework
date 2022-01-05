@@ -1,0 +1,216 @@
+<!doctype html>
+<html>
+    <head>
+        <title>GGojang's Blog</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+        <style>
+            #content {
+                display:grid;
+                grid-template-columns: 1fr 10px 1fr;
+                grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+                text-align:center;
+            }
+            #content h2 {
+                font-family:"FredokaOne";
+                margin-top:5px;
+                padding-bottom:20px;
+            }
+            #content img{
+                transition: all 1s;
+            }
+            #sector1_2, #sector2_1, #sector2_2, #sector3_1, #sector3_2, #sector4_1, #sector4_2, #sector5_1, #sector5_2, #sector6_1, #sector6_2, #sector7_1, #sector7_2, #sector8_1, #sector8_2{
+                display:grid;
+                grid-template-rows: 1fr 58px;
+            }
+            #image {
+                background-image:url(pic/spider_man_5.jpg);
+                background-size:100%;
+                background-repeat:no-repeat;  
+                font-family:"ubuntu";
+                font-size:1.8rem;
+                font-weight: bold;
+                color:darkred;
+            }
+            #sector1_2 #mix_text{
+                mix-blend-mode:screen;
+            }
+            #sector2_1 #mix_text{
+                mix-blend-mode:screen;
+            }
+            #sector2_2 #mix_text{
+                mix-blend-mode:overlay;
+            }
+            #sector3_1 #mix_text{
+                mix-blend-mode:darken;
+            }
+            #sector3_2 #mix_text{
+                mix-blend-mode:lighten;
+            }
+            #sector4_1 #mix_text{
+                mix-blend-mode:color-dodge;
+            }
+            #sector4_2 #mix_text{
+                mix-blend-mode:color-burn;
+            }
+            #sector5_1 #mix_text{
+                mix-blend-mode:hard-light;
+            }
+            #sector5_2 #mix_text{
+                mix-blend-mode:soft-light;
+            }
+            #sector6_1 #mix_text{
+                mix-blend-mode:difference;
+            }
+            #sector6_2 #mix_text{
+                mix-blend-mode:exclusion;
+            }
+            #sector7_1 #mix_text{
+                mix-blend-mode:hue;
+            }
+            #sector7_2 #mix_text{
+                mix-blend-mode:saturation;
+            }
+            #sector8_1 #mix_text{
+                mix-blend-mode:color;
+            }
+            #sector8_2 #mix_text{
+                mix-blend-mode:luminosity;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <a href="index.html">GGojang's Blog</a>
+            <div id="info">위 글자를 클릭하면 첫 페이지로 돌아갑니다</div>
+        </header>
+        <div id="middle">
+            <div id="nav">
+                <ol>
+                    <li>Layout</li>
+                    <ul>
+                        <li><a href="Layout_FLoat.html">Float</a></li>
+                        <li><a href="Layout_Multi_Column.html">Multi Column</a></li>
+                    </ul>
+                    <li>Font</li>
+                    <ul>
+                        <li><a href="Font_Korean.html">Korean</a></li>
+                        <li><a href="Font_English.html">English</a></li>
+                    </ul>
+                    <li>Graphic</li>
+                    <ul>
+                        <li><a href="Graphic_Background(Scroll).html">Background(Scroll)</a></li>
+                        <li><a href="Graphic_Background(Fixed).html">Background(Fixed)</a></li>
+                        <li><a href="Graphic_Filter.html">Filter</a></li>
+                        <li><a href="Graphic_Blend(Background).html">Blend(Background)</a></li>
+                        <li><a href="Graphic_Blend(Mix).html">Blend(Mix)</a></li>
+                        <li><a href="Graphic_Transform.html">Transform</a></li>
+                        <li><a href="Graphic_Special.html">Special</a></li>
+                    </ul>
+                </ol>   
+            </div>
+            <div id="main">
+                <div id="info">
+                    <h2>Graphic - Blend(Mix)</h2>
+                    <div id="info_text">
+                        해당 페이지는 이미지에 글을 이용해 Blend 기능을 적용한 페이지입니다. <br>
+                        Original Image에 빨간색 Text를 Blend한 결과를 확인할 수 있습니다. <br>
+                    </div>
+                </div>  
+                <div id="content">
+                    <div id="sector1_1">
+                        <img src="pic/spider_man_5.jpg" width=100%;>
+                        <h2>Original Image</h2>
+                    </div>
+                    <div id="between"></div>
+                    <div id="sector1_2">
+                        <div id="image"><div id="mix_text">Lorem ipsum dolor, sit amet consectetur elit. Dolor, nihil quos. Nemo totam est, repellendus laudantium eos numquam quo placeat. Nam rem harum consectetur porro ab maxime temporibus iste in labore expedita voluptas culpa, facilis dolores eum voluptatum fugit itaque? Corrupti autem tempore in minus.</div></div>
+                        <div id="imgae_info"><h2>multiply(with red)</h2></div>
+                    </div>
+                    <div id="sector2_1">
+                        <div id="image"><div id="mix_text">Lorem ipsum dolor, sit amet consectetur elit. Dolor, nihil quos. Nemo totam est, repellendus laudantium eos numquam quo placeat. Nam rem harum consectetur porro ab maxime temporibus iste in labore expedita voluptas culpa, facilis dolores eum voluptatum fugit itaque? Corrupti autem tempore in minus.</div></div>
+                        <div id="imgae_info"><h2>screen(with red)</h2></div>
+                    </div>
+                    <div id="between"></div>
+                    <div id="sector2_2">
+                        <div id="image"><div id="mix_text">Lorem ipsum dolor, sit amet consectetur elit. Dolor, nihil quos. Nemo totam est, repellendus laudantium eos numquam quo placeat. Nam rem harum consectetur porro ab maxime temporibus iste in labore expedita voluptas culpa, facilis dolores eum voluptatum fugit itaque? Corrupti autem tempore in minus.</div></div>
+                        <div id="imgae_info"><h2>overlay(with red)</h2></div>
+                    </div>
+                    <div id="sector3_1">
+                        <div id="image"><div id="mix_text">Lorem ipsum dolor, sit amet consectetur elit. Dolor, nihil quos. Nemo totam est, repellendus laudantium eos numquam quo placeat. Nam rem harum consectetur porro ab maxime temporibus iste in labore expedita voluptas culpa, facilis dolores eum voluptatum fugit itaque? Corrupti autem tempore in minus.</div></div>
+                        <div id="imgae_info"><h2>darken(with red)</h2></div>
+                    </div>
+                    <div id="between"></div>
+                    <div id="sector3_2">
+                        <div id="image"><div id="mix_text">Lorem ipsum dolor, sit amet consectetur elit. Dolor, nihil quos. Nemo totam est, repellendus laudantium eos numquam quo placeat. Nam rem harum consectetur porro ab maxime temporibus iste in labore expedita voluptas culpa, facilis dolores eum voluptatum fugit itaque? Corrupti autem tempore in minus.</div></div>
+                        <div id="imgae_info"><h2>lighten(with red)</h2></div>
+                    </div>
+                    <div id="sector4_1">
+                        <div id="image"><div id="mix_text">Lorem ipsum dolor, sit amet consectetur elit. Dolor, nihil quos. Nemo totam est, repellendus laudantium eos numquam quo placeat. Nam rem harum consectetur porro ab maxime temporibus iste in labore expedita voluptas culpa, facilis dolores eum voluptatum fugit itaque? Corrupti autem tempore in minus.</div></div>
+                        <div id="imgae_info"><h2>color-dodge(with red)</h2></div>
+                    </div>
+                    <div id="between"></div>
+                    <div id="sector4_2">
+                        <div id="image"><div id="mix_text">Lorem ipsum dolor, sit amet consectetur elit. Dolor, nihil quos. Nemo totam est, repellendus laudantium eos numquam quo placeat. Nam rem harum consectetur porro ab maxime temporibus iste in labore expedita voluptas culpa, facilis dolores eum voluptatum fugit itaque? Corrupti autem tempore in minus.</div></div>
+                        <div id="imgae_info"><h2>color-burn(with red)</h2></div>
+                    </div>
+                    <div id="sector5_1">
+                        <div id="image"><div id="mix_text">Lorem ipsum dolor, sit amet consectetur elit. Dolor, nihil quos. Nemo totam est, repellendus laudantium eos numquam quo placeat. Nam rem harum consectetur porro ab maxime temporibus iste in labore expedita voluptas culpa, facilis dolores eum voluptatum fugit itaque? Corrupti autem tempore in minus.</div></div>
+                        <div id="imgae_info"><h2>hard-light(with red)</h2></div>
+                    </div>
+                    <div id="between"></div>
+                    <div id="sector5_2">
+                        <div id="image"><div id="mix_text">Lorem ipsum dolor, sit amet consectetur elit. Dolor, nihil quos. Nemo totam est, repellendus laudantium eos numquam quo placeat. Nam rem harum consectetur porro ab maxime temporibus iste in labore expedita voluptas culpa, facilis dolores eum voluptatum fugit itaque? Corrupti autem tempore in minus.</div></div>
+                        <div id="imgae_info"><h2>soft-light(with red)</h2></div>
+                    </div>
+                    <div id="sector6_1">
+                        <div id="image"><div id="mix_text">Lorem ipsum dolor, sit amet consectetur elit. Dolor, nihil quos. Nemo totam est, repellendus laudantium eos numquam quo placeat. Nam rem harum consectetur porro ab maxime temporibus iste in labore expedita voluptas culpa, facilis dolores eum voluptatum fugit itaque? Corrupti autem tempore in minus.</div></div>
+                        <div id="imgae_info"><h2>difference(with red)</h2></div>
+                    </div>
+                    <div id="between"></div>
+                    <div id="sector6_2">
+                        <div id="image"><div id="mix_text">Lorem ipsum dolor, sit amet consectetur elit. Dolor, nihil quos. Nemo totam est, repellendus laudantium eos numquam quo placeat. Nam rem harum consectetur porro ab maxime temporibus iste in labore expedita voluptas culpa, facilis dolores eum voluptatum fugit itaque? Corrupti autem tempore in minus.</div></div>
+                        <div id="imgae_info"><h2>exclusion(with red)</h2></div>
+                    </div>
+                    <div id="sector7_1">
+                        <div id="image"><div id="mix_text">Lorem ipsum dolor, sit amet consectetur elit. Dolor, nihil quos. Nemo totam est, repellendus laudantium eos numquam quo placeat. Nam rem harum consectetur porro ab maxime temporibus iste in labore expedita voluptas culpa, facilis dolores eum voluptatum fugit itaque? Corrupti autem tempore in minus.</div></div>
+                        <div id="imgae_info"><h2>hue(with red)</h2></div>
+                    </div>
+                    <div id="between"></div>
+                    <div id="sector7_2">
+                        <div id="image"><div id="mix_text">Lorem ipsum dolor, sit amet consectetur elit. Dolor, nihil quos. Nemo totam est, repellendus laudantium eos numquam quo placeat. Nam rem harum consectetur porro ab maxime temporibus iste in labore expedita voluptas culpa, facilis dolores eum voluptatum fugit itaque? Corrupti autem tempore in minus.</div></div>
+                        <div id="imgae_info"><h2>saturation(with red)</h2></div>
+                    </div>
+                    <div id="sector8_1">
+                        <div id="image"><div id="mix_text">Lorem ipsum dolor, sit amet consectetur elit. Dolor, nihil quos. Nemo totam est, repellendus laudantium eos numquam quo placeat. Nam rem harum consectetur porro ab maxime temporibus iste in labore expedita voluptas culpa, facilis dolores eum voluptatum fugit itaque? Corrupti autem tempore in minus.</div></div>
+                        <div id="imgae_info"><h2>color(with red)</h2></div>
+                    </div>
+                    <div id="between"></div>
+                    <div id="sector8_2">
+                        <div id="image"><div id="mix_text">Lorem ipsum dolor, sit amet consectetur elit. Dolor, nihil quos. Nemo totam est, repellendus laudantium eos numquam quo placeat. Nam rem harum consectetur porro ab maxime temporibus iste in labore expedita voluptas culpa, facilis dolores eum voluptatum fugit itaque? Corrupti autem tempore in minus.</div></div>
+                        <div id="imgae_info"><h2>luminosity(with red)</h2></div>
+                    </div>
+                </div>
+            </div>
+            <div id="aside">
+                <img src="pic/pic_0.jpg" width=150px;>
+                <img src="pic/pic_1.jpg" width=150px;>
+                <img src="pic/pic_2.jpg" width=150px;>
+                <img src="pic/pic_3.jpg" width=150px;>
+                <img src="pic/pic_4.jpg" width=150px;>
+                [광고~]
+            </div>
+        </div>
+        <footer>
+            <div id=footer_icon>
+                <img src="pic/lottery.png" width="70px">
+            </div>
+            <div id=footer_main>
+                사이트명: GGojang's Blog<br>
+                웹페이지 주소: GGojang.site<br>
+                이메일: jeongookjang@naver.com<br>
+                연락처: 010-5114-2039<br>
+            </div>
+        </footer>
+    </body>
+</html>

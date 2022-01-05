@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            *, *:after, *:before {
+            box-sizing: border-box;
+            }
+            body {
+            background: #F5F3F4;
+            margin: 0;
+            padding: 10px;
+            text-align: center;
+            }
+            h1 {
+            color: #4c4c4c;
+            font-weight: 600;
+            border-bottom: 1px solid #ccc;
+            }
+            .card {
+            display: inline-block;
+            margin: 10px;
+            background: #fff;
+            padding: 15px;
+            min-width: 200px;
+            box-shadow: 0 3px 5px #ddd;
+            color: #555;
+            }
+            .card .box {
+            width: 100px;
+            height: 100px;
+            margin: auto;
+            background: #ddd;
+            /* cursor: pointer; */
+            }
+            .card .box .fill {
+            width: 100px;
+            height: 100px;
+            /* position: relative; */
+            background: #03A9F4;
+            opacity: .5;
+            transition: 0.3s;
+            }
+            .card p {
+            margin: 25px 0 0;
+            }
+            .rotate:hover .fill {
+            transform: rotate(45deg);
+            }
+            .rotateX:hover .fill {
+            transform: rotateX(45deg);
+            }
+            .rotateY:hover .fill {
+            transform: rotateY(45deg);
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Css3 Transform</h1>
+        <!-- Rotate-->
+        <div class="card">
+        <div class="box rotate">
+            <div class="fill"></div>
+        </div>
+        <p>rotate(45deg)</p>
+        </div>
+        <div class="card">
+        <div class="box rotateX">
+            <div class="fill"></div>
+        </div>
+        <p>rotateX(45deg)</p>
+        </div>
+        <div class="card">
+        <div class="box rotateY">
+            <div class="fill"></div>
+        </div>
+        <p>rotateY(45deg)</p>
+        </div>
+    </body>
+</html>

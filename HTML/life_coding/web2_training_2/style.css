@@ -1,0 +1,186 @@
+body {
+  display: grid;
+  grid-template-rows: 111px 1fr 150px;
+  margin: 0;
+}
+a {
+  color: black;
+}
+header {
+  font-family: "CookieRun Regular";
+  font-size: 45px;
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 20px;
+  /* background-color: rgba(0, 191, 255, 0.85); */
+  background-color: darkred;
+  background-image: url(pic/spider-logo.png);
+  background-size: 110px;
+}
+header a {
+  color: ghostwhite;
+  /* background-color: rgb(0, 191, 255, 0.95); */
+  /* text-shadow: 2.5px 2.5px 1px rgba(0, 191, 255, 0.8); */
+  text-shadow: 2.5px 2.5px 1px rgba(139, 0, 0, 0.9);
+  text-decoration-line: none;
+}
+header #info {
+  font-size: 11px;
+  color: white;
+  /* text-shadow: 1px 1px 1px rgb(0, 191, 255); */
+  text-shadow: 2.5px 2.5px 1px rgba(139, 0, 0, 0.9);
+  font-family: "Courier New";
+  padding-top: 10px;
+  border-bottom: none;
+}
+footer {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  font-family: "NanumGothic";
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(248, 249, 250, 0.3);
+  /* color: #737881; */
+  background-color: #222426;
+  padding-top: 20px;
+  padding-left: 80px;
+}
+footer #footer_icon {
+  padding-right: 40px;
+  text-align: right;
+}
+#middle {
+  display: grid;
+  grid-template-columns: 220px 1fr 175px;
+}
+#nav {
+  font-family: "CookieRun Regular";
+  font-size: 23px;
+  /* color: deepskyblue; */
+  color: rgb(169, 0, 0);
+  text-shadow: 0.8px 0.8px 1px snow;
+  /* background-color: #222426; */
+  border-right: 1px dotted darkred;
+}
+#nav a {
+  /* color: rgba(0, 191, 255, 0.9); */
+  color: rgb(169, 0, 0);
+}
+#nav ol {
+  padding-left: 35px;
+}
+#nav ol ul {
+  padding-left: 10px;
+  font-size: 18px;
+}
+#main {
+  display: grid;
+  grid-template-rows: 90px 1fr;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 25px;
+}
+#info {
+  border-bottom: 1.5px dashed darkred;
+}
+h2 {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+#info_text {
+  font-size: 12px;
+  color: gray;
+}
+#content {
+  padding-top: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+#aside {
+  padding-top: 15px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 6px;
+  border-left: 1px dotted darkred;
+  text-align: center;
+  /* background-color: snow; */
+}
+
+@font-face {
+  font-family: "CookieRun Regular";
+  src: url("text_font/Korean/CookieRun Regular.woff2") format("woff2"),
+    url("text_font/Korean/CookieRun Regular.woff") format("woff"),
+    url("text_font/Korean/CookieRun Regular.eot") format("embedded-opentype");
+}
+@font-face {
+  font-family: "CookieRun Bold";
+  src: url("text_font/Korean/CookieRun Bold.woff2") format("woff2"),
+    url("text_font/Korean/CookieRun Bold.woff") format("woff"),
+    url("text_font/Korean/CookieRun Bold.eot") format("embedded-opentype");
+}
+@font-face {
+  font-family: "CookieRun Black";
+  src: url("text_font/Korean/CookieRun Black.woff2") format("woff2"),
+    url("text_font/Korean/CookieRun Black.woff") format("woff"),
+    url("text_font/Korean/CookieRun Black.eot") format("embedded-opentype");
+}
+@font-face {
+  font-family: "SANGJU Gyeongcheon Island";
+  src: url("text_font/Korean/SANGJU Gyeongcheon Island.woff2") format("woff2"),
+    url("text_font/Korean/SANGJU Gyeongcheon Island.woff") format("woff"),
+    url("text_font/Korean/SANGJU Gyeongcheon Island.eot")
+      format("embedded-opentype");
+}
+@font-face {
+  font-family: "SANGJU Gotgam";
+  src: url("text_font/Korean/SANGJU Gotgam.woff2") format("woff2"),
+    url("text_font/Korean/SANGJU Gotgam.woff") format("woff"),
+    url("text_font/Korean/SANGJU Gotgam.eot") format("embedded-opentype");
+}
+@font-face {
+  font-family: "NanumGothic";
+  src: url("text_font/Korean/NanumGothic.woff") format("woff"),
+    url("text_font/Korean/NanumGothic.eot") format("embedded-opentype");
+}
+@font-face {
+  font-family: "NanumGothicExtraBold";
+  src: url("text_font/Korean/NanumGothicExtraBold.woff") format("woff"),
+    url("text_font/Korean/NanumGothicExtraBold.eot") format("embedded-opentype");
+}
+@font-face {
+  font-family: "PTSans";
+  src: url("text_font/English/PTSans-Regular.woff2") format("woff2"),
+    url("text_font/English/PTSans-Regular.woff") format("woff"),
+    url("text_font/English/PTSans-Regular.eot") format("embedded-opentype");
+}
+@font-face {
+  font-family: "Ubuntu";
+  src: url("text_font/English/Ubuntu-Regular.woff2") format("woff2"),
+    url("text_font/English/Ubuntu-Regular.woff") format("woff"),
+    url("text_font/English/Ubuntu-Regular.eot") format("embedded-opentype");
+}
+@font-face {
+  font-family: "Pushster";
+  src: url("text_font/English/Pushster-Regular.woff2") format("woff2"),
+    url("text_font/English/Pushster-Regular.woff") format("woff"),
+    url("text_font/English/Pushster-Regular.eot") format("embedded-opentype");
+}
+@font-face {
+  font-family: "FredokaOne";
+  src: url("text_font/English/FredokaOne-Regular.woff2") format("woff2"),
+    url("text_font/English/FredokaOne-Regular.woff") format("woff"),
+    url("text_font/English/FredokaOne-Regular.eot") format("embedded-opentype");
+}
+@font-face {
+  font-family: "BebasNeue";
+  src: url("text_font/English/BebasNeue-Regular.woff2") format("woff2"),
+    url("text_font/English/BebasNeue-Regular.woff") format("woff"),
+    url("text_font/English/BebasNeue-Regular.eot") format("embedded-opentype");
+}
+@font-face {
+  font-family: "Cinzel";
+  src: url("text_font/English/Cinzel-VariableFont_wght.woff2") format("woff2"),
+    url("text_font/English/Cinzel-Regular.woff") format("woff"),
+    url("text_font/English/Cinzel-VariableFont_wght.eot")
+      format("embedded-opentype");
+}
