@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Object Selector</title>
+    </head>
+    <body>
+        <div id="1st_block">one</div>
+        <div id="2nd_block">two</div>
+        <div id="3rd_block">three</div>
+        <div id="4th_block">four</div>
+        <div id="5th_block">five</div>
+        <br>
+        1st step. Select block <br>
+        <input type="button" id="1st" value="one" onclick="takeId('1st_block')"/>
+        <input type="button" id="2nd" value="two" onclick="takeId('2nd_block')"/>
+        <input type="button" id="3rd" value="three" onclick="takeId('3rd_block')"/>
+        <input type="button" id="4th" value="four" onclick="takeId('4th_block')"/>
+        <input type="button" id="5th" value="five" onclick="takeId('5th_block')"/>
+        <input type="button" id="zero" value="zero" onclick="alert('Hello~')"/>
+        <br><br>
+        2nd step. Select color <br>
+        <input type="button" value="red" onclick="apply('red')"/>
+        <input type="button" value="green" onclick="apply('green')"/>
+        <input type="button" value="blue" onclick="apply('blue')"/>
+        <input type="button" value="black" onclick="apply('black')"/>
+        <script>
+            var i
+            function takeId(param) {
+                i = document.getElementById(param);
+            }
+            function apply(color) {
+                if (!i) {
+                    alert("블록을 먼저 선택해 주세요!");
+                } else {
+                    i.style.color = color;
+                }
+            }
+        </script>
+    </body>
+</html>

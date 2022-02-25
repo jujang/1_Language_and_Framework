@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BOM!</title>
+        <style>
+            body {
+                margin:0px;
+            }
+            #header {
+                border-bottom:1px solid black;
+                padding:10px 10px 10px 10px;
+            }
+            #main {
+                padding:10px 10px 10px 10px;
+            }
+            #footer {
+                border-top:1px solid black;
+                padding:10px 10px 10px 10px;
+            }
+        </style>
+        <script>
+            var moving_url;
+            function func_submit_url() {
+                moving_url = document.getElementById('url_value').value;
+                alert(moving_url);
+            }
+            var new_window_width;
+            var new_window_height;
+            function func_window_open(num) {
+                if(!moving_url) {
+                    alert('URL작성 및 입력 버튼을 눌러주세요!!');
+                } else {
+                    if(num === 1) {
+                        window.open(moving_url,'_self');
+                    } else if(num === 2) {
+                        window.open(moving_url,'_blank');
+                    } else if(num === 3) {
+                        window.open(moving_url,'ot');
+                    } else if(num === 4) {
+                            window.open(moving_url,'_blank', 'width=1000px, height=1000px');
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div id="header">
+            <button type="button" onclick="location.reload()">페이지 새로고침</button>
+            <button type="button" onclick="location.href='selector.html'">color selector페이지로 이동</button>
+            <button type="button" onclick="location.href='https://www.ggojang.site'">ggojang.site로 이동</button>
+        </div>
+        <div id="main">
+            <script>
+                document.write('현재 페이지의 주소는 아래와 같습니다','<br>');
+                document.write(location.href);
+            </script>
+        </div>
+        <div id="footer">
+            원하는 웹페이지 URL <input type="text" id='url_value' placeholder="예:www.ggojang.site">
+            <button type="button" onclick="func_submit_url()">입력</button><br><br>
+            <button type="button" onclick="func_window_open(1)">현재의 탭에서 원하는 웹페이지로 이동</button>
+            <button type="button" onclick="func_window_open(2)">새로운 탭에서 원하는 웹페이지로 이동</button>
+            <button type="button" onclick="func_window_open(3)">원하는 웹페이지를 새 탭에서 열지만 이미 2번째부터는 그 탭을 새로고침</button>
+            <button type="button" onclick="func_window_open(4)">팝업창에 웹페이지 열기</button>
+        </div>
+    </body>
+</html>

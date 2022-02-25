@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BOM</title>
+        <style>
+        </style>
+        <script>
+            var user_name = '손';
+            function func_input_name() {
+                user_name = prompt('성함을 입력해주세요');
+                while(!user_name) {
+                    user_name = prompt('정상적으로 입력되지 않았습니다.\n다시 성함을 입력해주세요');
+                }
+                alert(user_name+'님 해당 페이지에 오신 것을 환영합니다');
+                location.href='BOM_2.html';
+            }
+        </script>
+    </head>
+    <body>
+        <div id="main">
+            <div id="hello">
+                <button type="button" onclick="func_input_name()">정회원으로 사용하기</button><br>
+                <button type="button" onclick="window.open('BOM_2.html', '_self')">손님으로 사용하기</button><br>
+            </div>
+        </div>
+    </body>
+</html>

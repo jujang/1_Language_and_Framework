@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BOM!</title>
+        <script>
+            var user_name;
+            function func_confirm() {
+                while(1) {
+                    if(confirm('해당 페이지를 로드하시겠습니까?')) {
+                        user_name = prompt('성함을 입력해주세요');
+                        break;
+                    } else {
+                        alert("로드하기 싫다면 이 페이지를 나가십시오");
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <script>
+            func_confirm();
+            document.write(user_name+'님 해당 페이지에 오신 것을 환영합니다','<br>');
+            document.write('현재 페이지의 주소는 아래와 같습니다','<br>');
+            document.write(location.href);
+    </script>
+        <br><br>
+        <!-- <input type="button" value="새로고침" onclick="location.reload()"> -->
+        <button type="button" onclick="location.href='https://www.ggojang.site'">ggojang.site로 이동</button>
+        <button type="button" onclick="location.reload()">페이지 새로고침</button>
+    </body>
+</html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <input type="button" id="event_1" value="button">
+        <script>
+            var t = document.getElementById('event_1');
+            t.onclick = function() {
+                alert('Hello world, '+event.target.value);
+            }
+        </script>
+    </body>
+</html>
