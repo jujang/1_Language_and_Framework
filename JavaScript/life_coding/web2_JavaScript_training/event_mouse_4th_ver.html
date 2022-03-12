@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            #pool{
+                display:inline;
+            }
+            #card{
+                width:800px;
+                height:300px;
+                background-color:gray;
+            }
+            table {
+                border-collapse: collapse;
+            }
+            td, th {
+                padding:4px;
+                border:1px solid gray;
+            }
+            #table_1 {
+                display:inline-block;
+                margin:20px 20px 20px 20px;
+            }
+            #table_2{
+                display:inline-block;
+                margin:20px 20px 172px 20px;
+            }
+            #table_3{
+                display:inline-block;
+                margin:20px 20px 202px 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="body_t">
+        <div id="pool">
+            <div id="card">
+
+            </div>
+        <br>
+        </div>
+
+        정보테이블<br>
+        <div id="total_time">
+
+        </div>
+
+        <div id="info_table">
+            <div id="table_1">
+                <table>
+                    <th>Basic mouse event</th>
+                    <th>coordinate values</th>
+                    <tr>
+                        <td>click</td>
+                        <td id="table_1_1"></td> 
+                    </tr>
+                    <tr>
+                        <td>dbclick</td>
+                        <td id="table_1_2"></td> 
+                    </tr>
+                    <tr>
+                        <td>mousedown</td>
+                        <td id="table_1_3"></td> 
+                    </tr>
+                    <tr>
+                        <td>mouseup</td>
+                        <td id="table_1_4"></td> 
+                    </tr>
+                    <tr>
+                        <td>mousemove</td>
+                        <td id="table_1_5"></td> 
+                    </tr>
+                    <tr>
+                        <td>mouseover</td>
+                        <td id="table_1_6"></td> 
+                    </tr>
+                    <tr>
+                        <td>mouseout</td>
+                        <td id="table_1_7"></td> 
+                    </tr>
+                    <tr>
+                        <td>contextmenu</td>
+                        <td id="table_1_8"></td> 
+                    </tr>
+                </table>
+            </div>
+
+            <div id="table_2">
+                <table>
+                    <th>mouse&key event</th>
+                    <th>coordinate values</th>
+                    <tr>
+                        <td>event.shiftKey</td>
+                        <td id="table_2_1"></td> 
+                    </tr>
+                    <tr>
+                        <td>event.altKey</td>
+                        <td id="table_2_2"></td> 
+                    </tr>
+                    <tr>
+                        <td>event.ctrlKey</td>
+                        <td id="table_2_3"></td> 
+                    </tr>
+                </table>
+            </div>
+
+            <div id="table_3">
+                <table>
+                    <th>mouse axis event</th>
+                    <th>coordinate values</th>
+                    <tr>
+                        <td>event.clientX</td>
+                        <td id="table_3_1"></td> 
+                    </tr>
+                    <tr>
+                        <td>event.clientY</td>
+                        <td id="table_3_2"></td> 
+                    </tr>
+                </table>
+            </div>
+        </div>
+        </div>
+
+        <script>
+            var start_time = new Date();
+            var t = document.getElementById('card'); //얘는 이벤트가 발생하기 위한 측정 대상
+            function handler() {
+                var cur_time = new Date();
+                var stack_time = cur_time-start_time;
+                var time_seconds = (Math.floor(stack_time/100))/10;
+                var time_seconds_fixed = (time_seconds%60).toFixed(1);
+                var time_minute = Math.floor(stack_time/(60*1000));
+
+                if(time_minute>0) {
+                    document.getElementById('total_time').innerHTML = 'total time: '+time_minute+'m '+time_seconds_fixed+'s';    
+                }else{
+                        document.getElementById('total_time').innerHTML = 'total time: '+time_seconds_fixed+'s';
+                }
+            }
+            setInterval(
+                handler, 100   
+            );
+
+            t.addEventListener('mousemove', function(){
+                document.getElementById('table_3_1').innerHTML = event.clientX;
+                document.getElementById('table_3_2').innerHTML = event.clientY;
+            });
+        </script>
+    </body>
+</html>

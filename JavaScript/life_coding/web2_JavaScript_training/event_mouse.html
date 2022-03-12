@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="lib/jquery-3.6.0.min.js"> </script>
+        <style>
+            #pool{
+                display:inline;
+            }
+            #card{
+                width:800px;
+                height:300px;
+                background-color:gray;
+            }
+            table {
+                border-collapse: collapse;
+            }
+            td, th {
+                padding:4px;
+                border:1px solid gray;
+            }
+            #table_1 {
+                display:inline-block;
+                margin:20px 20px 20px 20px;
+            }
+            #table_2{
+                display:inline-block;
+                margin:20px 20px 172px 20px;
+            }
+            #table_3{
+                display:inline-block;
+                margin:20px 20px 202px 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="card">
+        </div><br>
+
+        정보테이블 <input type="button" value="이벤트 비활성화" onclick="event_onoff(this)">
+        <br>
+        <div id="total_time">
+
+        </div>
+
+        <div id="info_table">
+            <div id="table_1">
+                <table>
+                    <th>Basic mouse event</th>
+                    <th>coordinate values</th>
+                    <tr>
+                        <td>click</td>
+                        <td id="table_click"></td> 
+                    </tr>
+                    <tr>
+                        <td>dbclick</td>
+                        <td id="table_dblclick"></td> 
+                    </tr>
+                    <tr>
+                        <td>mousedown</td>
+                        <td id="table_mousedown"></td> 
+                    </tr>
+                    <tr>
+                        <td>mouseup</td>
+                        <td id="table_mouseup"></td> 
+                    </tr>
+                    <tr>
+                        <td>mousemove</td>
+                        <td id="table_mousemove"></td> 
+                    </tr>
+                    <tr>
+                        <td>mouseover</td>
+                        <td id="table_mouseover"></td> 
+                    </tr>
+                    <tr>
+                        <td>mouseout</td>
+                        <td id="table_mouseout"></td> 
+                    </tr>
+                    <tr>
+                        <td>contextmenu</td>
+                        <td id="table_contextmenu"></td> 
+                    </tr>
+                </table>
+            </div>
+
+            <div id="table_2">
+                <table>
+                    <th>mouse&key event</th>
+                    <th>coordinate values</th>
+                    <tr>
+                        <td>event.shiftKey</td>
+                        <td id="table_shiftKey"></td> 
+                    </tr>
+                    <tr>
+                        <td>event.altKey</td>
+                        <td id="table_altkey"></td> 
+                    </tr>
+                    <tr>
+                        <td>event.ctrlKey</td>
+                        <td id="table_ctrlkey"></td> 
+                    </tr>
+                </table>
+            </div>
+
+            <div id="table_3">
+                <table>
+                    <th>mouse axis event</th>
+                    <th>coordinate values</th>
+                    <tr>
+                        <td>event.clientX</td>
+                        <td id="table_clientx"></td> 
+                    </tr>
+                    <tr>
+                        <td>event.clientY</td>
+                        <td id="table_clienty"></td> 
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <script>
+            var start_time = new Date();
+            var time;
+            function time_handler() {
+                var cur_time = new Date();
+                var stack_time = cur_time-start_time;
+                var time_seconds = (Math.floor(stack_time/100))/10;
+                var time_seconds_fixed = (time_seconds%60).toFixed(1);
+                var time_minute = Math.floor(stack_time/(60*1000));
+
+                if(time_minute>0) {
+                    time = time_minute+'m '+time_seconds_fixed+'s';
+                    $('#total_time').html('total time: '+time);
+                }else{
+                    time = time_seconds_fixed+'s';
+                    $('#total_time').html('total time: '+time);
+                }
+            }
+            setInterval(
+                time_handler, 100   
+            );
+
+            var event_bool = true;
+            function event_handler(){
+                if(!event_bool){
+                } else {
+                    $('#table_'+event.type).html(time);
+                    if(event.shiftKey){
+                        $('#table_shiftKey').html(time);
+                    }
+                    if(event.altKey){
+                        $('#table_altkey').html(time);
+                    }
+                    if(event.ctrlKey){
+                        $('#table_ctrlkey').html(time);
+                    }
+                    $('#table_clientx').html(event.clientX);
+                    $('#table_clienty').html(event.clientY);
+                }
+            }
+            $('#card').on('click', event_handler);
+            $('#card').on('dblclick', event_handler);
+            $('#card').on('mousedown', event_handler);
+            $('#card').on('mouseup', event_handler);
+            $('#card').on('mousemove', event_handler);
+            $('#card').on('mouseover', event_handler);
+            $('#card').on('mouseout', event_handler);
+            $('#card').on('contextmenu', event_handler);
+
+            function event_onoff(self){
+                if(self.value === '이벤트 비활성화'){
+                    self.value = '이벤트 활성화';
+                    event_bool = false;
+                } else {
+                    self.value = '이벤트 비활성화';
+                    event_bool = true;
+                }
+            }
+
+        </script>
+    </body>
+</html>

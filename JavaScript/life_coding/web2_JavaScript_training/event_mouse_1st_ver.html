@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            #pool{
+                display:inline;
+            }
+            #card{
+                width:800px;
+                height:300px;
+                background-color:gray;
+            }
+            #table_1 {
+                display:inline-block;
+                margin:20px 20px 20px 20px;
+            }
+            #table_2{
+                display:inline-block;
+                margin:20px 20px 155px 20px;
+            }
+            #table_3{
+                display:inline-block;
+                margin:20px 20px 183px 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="pool">
+            <div id="card">
+
+            </div>
+        <br>
+        </div>
+
+        정보테이블<br>
+        <div id="info_table">
+            <div id="table_1">
+                <table border="1">
+                    <th>Basic mouse event</th>
+                    <th>coordinate values</th>
+                    <tr>
+                        <td>click</td>
+                        <td>얘 값은 어떻게 넣어줘야 되지...?</td> 
+                    </tr>
+                    <tr>
+                        <td>dbclick</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>mousedown</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>mouseup</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>mousemove</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>mouseover</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>mouseout</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>contextmenu</td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div id="table_2">
+                <table border="1">
+                    <th>mouse&key event</th>
+                    <th>coordinate values</th>
+                    <tr>
+                        <td>event.shiftKey</td>
+                        <td>얘 값은 어떻게 넣어줘야 되지...?</td> 
+                    </tr>
+                    <tr>
+                        <td>event.altKey</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>event.ctrlKey</td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div id="table_3">
+                <table border="1">
+                    <th>mouse axis event</th>
+                    <th>coordinate values</th>
+                    <tr>
+                        <td>event.clientX</td>
+                        <td><div id="table_3_1"></td> 
+                    </tr>
+                    <tr>
+                        <td>event.clientY</td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+
+
+        <script>
+            var t = document.getElementById('table_3_1');
+            t.addeventlistener = ('mousemove', function(){
+                document.write('a');
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            #pool{
+                display:inline;
+            }
+            #card{
+                width:800px;
+                height:300px;
+                background-color:gray;
+            }
+            table {
+                border-collapse: collapse;
+            }
+            td, th {
+                padding:4px;
+                border:1px solid gray;
+            }
+            #table_1 {
+                display:inline-block;
+                margin:20px 20px 20px 20px;
+            }
+            #table_2{
+                display:inline-block;
+                margin:20px 20px 172px 20px;
+            }
+            #table_3{
+                display:inline-block;
+                margin:20px 20px 202px 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="pool">
+            <div id="card">
+
+            </div>
+        <br>
+        </div>
+
+        정보테이블<br>
+        <div id="info_table">
+            <div id="table_1">
+                <table>
+                    <th>Basic mouse event</th>
+                    <th>coordinate values</th>
+                    <tr>
+                        <td>click</td>
+                        <td>얘 값은 어떻게 넣어줘야 되지...?</td> 
+                    </tr>
+                    <tr>
+                        <td>dbclick</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>mousedown</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>mouseup</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>mousemove</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>mouseover</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>mouseout</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>contextmenu</td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div id="table_2">
+                <table>
+                    <th>mouse&key event</th>
+                    <th>coordinate values</th>
+                    <tr>
+                        <td>event.shiftKey</td>
+                        <td>얘 값은 어떻게 넣어줘야 되지...?</td> 
+                    </tr>
+                    <tr>
+                        <td>event.altKey</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>event.ctrlKey</td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div id="table_3">
+                <table>
+                    <th>mouse axis event</th>
+                    <th>coordinate values</th>
+                    <tr>
+                        <td>event.clientX</td>
+                        <td id="table_3_1"></td> 
+                    </tr>
+                    <tr>
+                        <td>event.clientY</td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+
+        <script>
+            // document.write('a');            
+            // document.getElementById('table_3_1').innerHTML = 'b';
+        </script>
+
+        <script>
+            var t = document.getElementById('card'); //얘는 이벤트가 발생하기 위한 측정 대상
+            t.addEventListener('mousemove', function(){
+                // document.getElementById('elemclientx').innerHTML = event.clientX;
+            // t.getElementById('table_3_1').innerHTML = event.clientX; //얘는 이벤트에 의해 트리거되어서 동작하는 행위의 대상 및 내용
+            // document.getElementById('table_3_1').innerHTML = 'a';
+            document.getElementById('table_3_1').innerHTML = event.clientX;
+            });
+        </script>
+    </body>
+</html>
