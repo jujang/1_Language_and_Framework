@@ -26,4 +26,3 @@
     setTimeout( () => clearTimeout(timerId1), 10000);
     setTimeout( () => clearInterval(timerId2), 10000);
 }
-
