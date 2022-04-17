@@ -19,7 +19,7 @@ class UserStorage {
         return new Promise((resolve, reject) => {
             setTimeout(() => {
                 if(user === 'ellie') {
-                    resolve({name: 'ellie', role: '3 min'});
+                    resolve({name: 'ellie', role: 'admin'});
                 } else {
                     reject(new Error('no access'));
                 }
