@@ -1,0 +1,22 @@
+{
+    "manifest_version": 3,
+
+    "name": "FrequencyCheck",
+    "description": "Word counting extensions",
+    "version": "1.0",
+
+    "background": {
+        "service_worker": "background.js"
+    },
+    "permissions": [
+        "activeTab",
+        "tabs",
+        "scripting",
+        "declarativeContent",
+        "storage"
+    ],
+    "action": {
+        "default_icon": "icon.png",
+        "default_popup": "popup.html"
+    }
+}
