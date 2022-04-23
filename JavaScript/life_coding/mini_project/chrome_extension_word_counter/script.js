@@ -1,4 +1,5 @@
 
+let text = 1;
 function qq() {
     let bodyText = document.querySelector('body').innerText;
 
@@ -29,7 +30,7 @@ function qq() {
     });
 
     // let str = '';
-    let myText = '자바스크립트'; // 내가 원하는 입력받는 텍스트
+    let myText = 'frequencyhtml'; // 내가 원하는 입력받는 텍스트
     let myTextNum = 0;
     let totalTextNum = 0;
     for(let iii of text_arr){
@@ -43,16 +44,25 @@ function qq() {
     // alert(str);
 
     // alert(`${myTextNum} / ${totalTextNum} (${(Math.round((myTextNum/totalTextNum)*1000)/1000)}%)`);
-    let text = myTextNum + ' / ' + totalTextNum + ' (' + Math.round((myTextNum/totalTextNum)*1000)/1000 + '%)';    
+    text = myTextNum + ' / ' + totalTextNum + ' (' + Math.round((myTextNum/totalTextNum)*1000)/1000 + '%)';    
     // let text = (`${myTextNum} / ${totalTextNum} (${(Math.round((myTextNum/totalTextNum)*1000)/1000)}%)`);
     console.log(text);
-    //document.querySelector('#result').innerText = text;
-    document.querySelector('#resu').innerText = text;
+    // document.querySelector('#result').innerText = text;
 }
+
+console.log(text);
+function a () {
+    document.querySelector('#result').innerText = text;
+}
+
 chrome.tabs.query({ active: true, currentWindow: true }, 
-function(tabs) {
+    function(tabs) {
     chrome.scripting.executeScript({
         target: {tabId: tabs[0].id},
         function: qq
+    });
+    chrome.scripting.executeScript({
+        target: {tabId: tabs[1].id},
+        function: a
     });
 });
