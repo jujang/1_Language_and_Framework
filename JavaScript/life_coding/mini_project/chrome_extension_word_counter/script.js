@@ -1,5 +1,4 @@
-
-let text = 1;
+var text = 1;
 function qq() {
     let bodyText = document.querySelector('body').innerText;
 
@@ -44,15 +43,15 @@ function qq() {
     // alert(str);
 
     // alert(`${myTextNum} / ${totalTextNum} (${(Math.round((myTextNum/totalTextNum)*1000)/1000)}%)`);
-    text = myTextNum + ' / ' + totalTextNum + ' (' + Math.round((myTextNum/totalTextNum)*1000)/1000 + '%)';    
+    //text = myTextNum + ' / ' + totalTextNum + ' (' + Math.round((myTextNum/totalTextNum)*1000)/1000 + '%)';    
     // let text = (`${myTextNum} / ${totalTextNum} (${(Math.round((myTextNum/totalTextNum)*1000)/1000)}%)`);
-    console.log(text);
-    // document.querySelector('#result').innerText = text;
+    //console.log(text);
+    //document.querySelector('#result').innerText = text;
 }
 
-console.log(text);
 function a () {
-    document.querySelector('#result').innerText = text;
+    // document.querySelector('#result').innerText = text;
+    console.log("2");
 }
 
 chrome.tabs.query({ active: true, currentWindow: true }, 
@@ -62,7 +61,7 @@ chrome.tabs.query({ active: true, currentWindow: true },
         function: qq
     });
     chrome.scripting.executeScript({
-        target: {tabId: tabs[1].id},
+        target: {tabId: tabs[0].id},
         function: a
     });
 });
