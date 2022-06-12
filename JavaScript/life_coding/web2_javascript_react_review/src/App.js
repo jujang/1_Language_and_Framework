@@ -107,10 +107,15 @@ function App() {
     }
     content = <Article title={title} body={body}></Article>
     otherContent = (
-      <li><a href={"/update"+id} onClick={(event)=> {
-        event.preventDefault();
-        setMode('UPDATE');
-      }}>Update</a></li>
+      <>
+        <li><a href={"/update"+id} onClick={(event)=> {
+          event.preventDefault();
+          setMode('UPDATE');
+        }}>Update</a></li>
+        <li><button onClick={()=>{
+          setMode('DELETE');
+        }}>Delete</button></li>
+      </>
     )        
   } 
   else if(mode === 'CREATE') {
@@ -133,6 +138,16 @@ function App() {
       setTopics(newTopics);
       setMode('READ');
     }}></Update>
+  }
+  else if(mode === 'DELETE'){
+    const newTopics = [];
+    for(let i=0; i<topics.length; i++){
+      if(id !== topics[i].id){
+        newTopics.push(topics[i]);
+      }
+    }
+    setTopics(newTopics);
+    setMode('WELCOME');
   }
 
   return (
