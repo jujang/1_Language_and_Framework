@@ -81,7 +81,6 @@ function Update(props) {
   )
 }
 
-
 function App() {
   const [mode, setMode] = useState('WELCOME');
   const [id, setId] = useState(null);
@@ -99,10 +98,15 @@ function App() {
   else if (mode === 'READ') {
     content = <Article title={topics[id].title} body={topics[id].body}></Article>;
     otherContent = (
+      <>
       <li><a href='' onClick={(event)=>{
         event.preventDefault();
         setMode('UPDATE');
       }}>Update</a></li>
+      <li><button onClick={(event)=>{
+        setMode('DELETE');
+      }}>Delete</button></li>
+      </>
     );
   }
   else if (mode === 'CREATE') {
@@ -123,6 +127,18 @@ function App() {
       setTopics(newTopics);
       setMode('READ');
     }}></Update>
+  }
+  else if(mode === 'DELETE') {
+    const newTopics = [];
+    let count = 0;
+    for(let i = 0; i < topics.length; i++){
+      if(id !== topics[i].id){
+        const newTopic = {id:count++, title:topics[i].title, body:topics[i].body };
+        newTopics.push(newTopic);
+      }
+    }
+    setTopics(newTopics);
+    setMode('WELCOME');
   }
 
   return (
@@ -147,3 +163,9 @@ function App() {
 }
 
 export default App;
+
+// id값 처리를 기존에 배운 것과는 다르게 해줬는데 delete 전까지는 아무 문제가 없었음
+// 다만, delete부분 구현을 해주다 보니 나의 방식대로는 문제가 약간 있어서 coount라는 변수를 넣고 만들어줬음
+// 게다가 나는 아예 delete라는 모드를 만들어줬는데 사실 없어도 되는 거지만 굳이 문제가 될 정도로는 안 보여서
+// 그냥 이번에는 이렇게 만들었음
+// 전반적으로 코드수는 줄일 수 있었고 코드 자체도 조금 더 깔끔해져서 가독성이 높아졌다고 생각함
