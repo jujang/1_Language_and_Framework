@@ -57,6 +57,30 @@ function Create(props){
   )
 }
 
+function Update(props) {
+  const [oldTitle, setTitle] = useState(props.title);
+  const [oldBody, setBody] = useState(props.body);
+  return (
+    <div>
+      <h2>Update</h2>
+      <form onSubmit={(event)=>{
+        event.preventDefault();
+        const newtitle = event.target.title.value;
+        const newbody = event.target.body.value;
+        props.onUpdate(newtitle, newbody);
+      }}>
+        <p><input type="text" name='title' placeholder='title' value={oldTitle} onChange={(event)=>{
+          setTitle(event.target.value);
+        }}/></p>
+        <p><textarea name="body" placeholder='body' value={oldBody} onChange={(event)=>{
+          setBody(event.target.value);
+        }}></textarea></p>
+        <p><input type='submit' value='Update'/></p>
+      </form>
+    </div>
+  )
+}
+
 
 function App() {
   const [mode, setMode] = useState('WELCOME');
@@ -67,13 +91,18 @@ function App() {
     {id:2, title:'javascript', body: 'javascript is...'}
   ]);
   let content = null;
+  let otherContent = null;
 
   if(mode === 'WELCOME') {
     content = <Article title='Welcome' body='Hello, WEB'></Article>;
   }
   else if (mode === 'READ') {
-    content = (
-      <Article title={topics[id].title} body={topics[id].body}></Article>
+    content = <Article title={topics[id].title} body={topics[id].body}></Article>;
+    otherContent = (
+      <li><a href='' onClick={(event)=>{
+        event.preventDefault();
+        setMode('UPDATE');
+      }}>Update</a></li>
     );
   }
   else if (mode === 'CREATE') {
@@ -86,6 +115,15 @@ function App() {
       setMode('READ');
     }}></Create>
   }
+  else if(mode === 'UPDATE') {
+    content = <Update title={topics[id].title} body={topics[id].body} onUpdate={(_title, _body)=>{
+      const newTopics = [...topics];
+      const updatedTopic = {id:topics[id].id, title:_title, body:_body};
+      newTopics[id] = updatedTopic;
+      setTopics(newTopics);
+      setMode('READ');
+    }}></Update>
+  }
 
   return (
     <div>
@@ -97,10 +135,13 @@ function App() {
         setMode('READ');
       }}></Nav>
       {content}
-      <a href='' onClick={(event)=>{
+      <ul>
+        <li><a href='' onClick={(event)=>{
         event.preventDefault();
         setMode('CREATE');
-      }}>Create</a>
+      }}>Create</a></li>
+      {otherContent}
+      </ul>
     </div>
   );
 }
