@@ -1,5 +1,4 @@
-import logo from './logo.svg';
-import './App.css';
+import {useState} from 'react';
 
 
 function Header(props) {
@@ -42,20 +41,33 @@ function Article(props){
 
 
 function App() {
+  const [mode, setMode] = useState('WELCOME');
+  const [id, setId] = useState(null);
   const topics = [
-    {id:1, title:'html', body: 'html is...'},
-    {id:2, title:'css', body: 'css is...'},
-    {id:3, title:'javascript', body: 'javascript is...'}
+    {id:0, title:'html', body: 'html is...'},
+    {id:1, title:'css', body: 'css is...'},
+    {id:2, title:'javascript', body: 'javascript is...'}
   ];
+  let content = null;
+
+  if(mode === 'WELCOME') {
+    content = <Article title='Welcome' body='Hello, WEB'></Article>;
+  }
+  else if (mode === 'READ') {
+    content = <Article title={topics[id].title} body={topics[id].body}></Article>;
+  }
+
+
   return (
     <div>
       <Header title='WEB' onModeChange={()=>{
-        alert('Header');
+        setMode('WELCOME');
       }}></Header>
-      <Nav topics={topics} onModeChange={(number)=>{
-        alert(number);
+      <Nav topics={topics} onModeChange={(_id)=>{
+        setId(_id);
+        setMode('READ');
       }}></Nav>
-      <Article title='Welcome' body='Hello, WEB'></Article>
+      {content}
     </div>
   );
 }
