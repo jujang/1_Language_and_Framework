@@ -72,10 +72,17 @@ class Unit{
     // 입력된 스텟에 따른 유닛 생성 생성자
     Unit (String name, int str, int def, int cri, int healthPoint){
         this.name = name;
-        this.str = str;
-        this.cri = cri;
-        this.def = def;
-        this.healthPoint = healthPoint;
+        if(str <= 0) this.str = 1;
+        else this.str = str;
+
+        if(def < 0) this.def = 0;
+        else this.def = def;
+
+        if(cri >= 0 && cri <= 100) this.cri = cri;
+        else this.cri = 0;
+
+        if(healthPoint <= 0) this.healthPoint = 1;
+        else this.healthPoint = healthPoint;
     }
     // 유닛 스텟 출력 메서드
     public void printMyStat(){
