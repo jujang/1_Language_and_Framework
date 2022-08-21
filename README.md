@@ -26,7 +26,7 @@ This repository contains results of learning programming languages and framework
 │      ├─python_tutorial_2
 │      ├─python_tutorial_function
 │      └─python_tutorial_module_package
-├─HTML&CSS
+├─HTML_CSS
 │  └─life_coding
 │      ├─web1
 │      ├─web1_training
