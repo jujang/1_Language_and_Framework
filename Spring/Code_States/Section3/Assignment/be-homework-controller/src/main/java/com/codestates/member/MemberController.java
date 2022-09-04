@@ -26,7 +26,25 @@ public class MemberController {
     }
 
     //---------------- 여기서 부터 아래에 코드를 구현하세요! -------------------//
+
     // 1. 회원 정보 수정을 위한 핸들러 메서드 구현
+    @PatchMapping("/{member-id}")
+    public ResponseEntity UpdateMember(@PathVariable("member-id") long memberId,
+                                       @RequestParam("phone") String phone) {
+
+        members.get(memberId).put("phone", phone);
+
+        return new ResponseEntity<>(members.get(memberId), HttpStatus.OK);
+    }
+
     // 2. 회원 정보 삭제를 위한 핸들러 메서드 구현
+    @DeleteMapping("/{member-id}")
+    public ResponseEntity deleteMember(@PathVariable("member-id") long memberId){
+
+        members.remove(memberId);
+
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+
 
 }
