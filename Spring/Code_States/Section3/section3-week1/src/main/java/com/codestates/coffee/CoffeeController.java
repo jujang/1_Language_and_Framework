@@ -13,17 +13,18 @@ import java.util.Map;
 public class CoffeeController {
 
     @PostMapping
-    public ResponseEntity postCoffee(@RequestParam("engName") String engName,
-                                     @RequestParam("korName") String korName,
-                                     @RequestParam("price") int price) {
+    public ResponseEntity postCoffee(@RequestBody CoffeePostDto coffeePostDto) {
+        return new ResponseEntity<>(coffeePostDto, HttpStatus.CREATED);
+    }
 
-        Map<String, Object> map = new HashMap<>();
+    @PatchMapping("/{coffee-id}")
+    public ResponseEntity patchCoffee(@RequestParam("coffee-id") long coffeeId,
+                                      @RequestBody CoffeePatchDto coffeePatchDto) {
 
-        map.put("engName", engName);
-        map.put("korName", korName);
-        map.put("price", price);
+        coffeePatchDto.setCoffeeId(coffeeId);
+        coffeePatchDto.setPrice(6000);
 
-        return new ResponseEntity<>(map, HttpStatus.CREATED);
+        return new ResponseEntity<>(coffeePatchDto, HttpStatus.OK);
     }
 
     @GetMapping("/{coffee-id}")
@@ -41,5 +42,10 @@ public class CoffeeController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
+    @DeleteMapping("/{coffee-id}")
+    public ResponseEntity deleteCoffee(@PathVariable("coffee-id") long coffeeId) {
+
+        return new ResponseEntity(HttpStatus.NO_CONTENT);
+    }
 
 }
