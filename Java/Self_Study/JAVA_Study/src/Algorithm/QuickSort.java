@@ -12,15 +12,11 @@ public class QuickSort {
 //        int[] arr = {7,4,2,8,3,5,1,6,10,9};
         int[] arr = {1, 2, 43, 100, 21};
 
-//        List<Integer> intList = Arrays.stream(arr).boxed().collect(Collectors.toCollection(ArrayList::new));
-//        System.out.println(intList.size());
-
         quickSort(arr, 0, arr.length-1);
 
         for(int i = 0; i < arr.length; i++){
             System.out.print(arr[i] + " ");
         }
-
     }
 
     public static void quickSort(int[] arr, int start, int end){

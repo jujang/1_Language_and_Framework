@@ -20,7 +20,6 @@ public class InsertionSort {
                 if(arr[j] < arr[j-1]) swap(arr, j, j-1);
             }
         }
-
     }
 
     public static void swap(int[] arr, int start, int end){
