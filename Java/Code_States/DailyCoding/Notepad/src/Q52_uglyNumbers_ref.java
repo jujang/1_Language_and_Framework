@@ -4,10 +4,10 @@ public class Q52_uglyNumbers_ref {
     public static void main(String[] args){
 
         int result = uglyNumbers(15);
-        System.out.println(result); // --> 1
+        System.out.println(result); // --> 24
 
         result = uglyNumbers(8);
-        System.out.println(result); // --> 3
+        System.out.println(result); // --> 9
 
     }
 
