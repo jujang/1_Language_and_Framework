@@ -13,14 +13,20 @@ public class Q08_convertDoubleSpaceToSingle {
 
     public static String convertDoubleSpaceToSingle(String str){
 
-        String[] strArr = str.split(" ");
+        String newStr = "";
+        if(str.length() == 0) return newStr;
 
-        String newStr = strArr[0];
-        for(int i = 1; i < strArr.length; i++){
-            System.out.println(strArr[i]);
-            newStr = newStr + " " + strArr[i];
+        char[] charArr = str.toCharArray();
+
+        for(int i = 0; i < charArr.length - 1; i++){
+            if(charArr[i] == ' ' && charArr[i+1] == ' ') {
+
+            } else {
+                newStr += charArr[i];
+            }
         }
-        return newStr;
+        newStr += charArr[charArr.length-1];
 
+        return newStr;
     }
 }
