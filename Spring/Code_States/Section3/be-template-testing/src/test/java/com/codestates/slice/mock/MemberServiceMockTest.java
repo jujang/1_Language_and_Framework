@@ -1,6 +1,7 @@
 package com.codestates.slice.mock;
 
 import com.codestates.exception.BusinessLogicException;
+import com.codestates.helper.event.MemberRegistrationApplicationEvent;
 import com.codestates.member.entity.Member;
 import com.codestates.member.repository.MemberRepository;
 import com.codestates.member.service.MemberService;
@@ -10,6 +11,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.context.ApplicationEventPublisher;
 
 import java.util.Optional;
 
@@ -25,6 +27,9 @@ public class MemberServiceMockTest {
 
     @InjectMocks // (3)
     private MemberService memberService;
+
+    @Mock
+    private ApplicationEventPublisher publisher;
 
     @Test
     public void createMemberTest() {
@@ -46,6 +51,7 @@ public class MemberServiceMockTest {
 
         // (4)
         given(memberRepository.findByEmail(Mockito.anyString())).willReturn(Optional.ofNullable(null)); // (5)
+        doNothing().when(publisher).publishEvent(Mockito.any(MemberRegistrationApplicationEvent.class));
 
         // when & then (6)
         assertDoesNotThrow(() -> memberService.createMember(member2));
