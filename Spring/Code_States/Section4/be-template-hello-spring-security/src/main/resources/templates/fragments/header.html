@@ -1,0 +1,20 @@
+﻿<html xmlns:th="http://www.thymeleaf.org"
+        xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+    <body>
+        <div align="right" th:fragment="header">
+            <a href="/members/register" class="text-decoration-none">회원가입</a> |
+            <span sec:authorize="isAuthenticated()">
+                <span sec:authorize="hasRole('USER')">
+                    <a href="/members/my-page" class="text-decoration-none">마이페이지</a> |
+                </span>
+                <a href="/logout" class="text-decoration-none">로그아웃</a>
+                <span th:text="${#authentication.name}">홍길동</span>님
+            </span>
+
+            <span sec:authorize="!isAuthenticated()">
+                <a href="/auths/login-form" class="text-decoration-none">로그인</a>
+            </span>
+<!--            <a href="/members/my-page" class="text-decoration-none">마이페이지</a>-->
+        </div>
+    </body>
+</html>
